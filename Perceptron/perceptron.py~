@@ -1,0 +1,39 @@
+
+import numpy as np
+import cpickle, random
+
+class Perceptron (object):
+    def __init__ (self, idim):
+        self.idim = idim
+        self.w = np.zeros(idim)
+        self.b = 0
+
+    def predict (self, x):
+        return np.sign(np.dot (self.w , x) + self.b)
+
+    def update (self, x, y) :
+        p = self.predict(x)
+        if p != y:
+            self.w +=   y*x
+            self.b += y
+
+
+if __name__ == '__main__':
+    with open('./littlemnist.pkl', 'rb') as f:
+        (trainX, trainY), (validX, validY), (testX, testY) = pickle.load(f,encoding = 'latin')     
+
+    D = [ (x,1 if y == 4 else -1) for x, y in zip(trainX, trainY) if y == 4 or y == 9]
+    V = [ (x,1 if y == 4 else -1) for x, y in zip(validX, validY) if y == 4 or y == 9]
+
+    classifier = Perceptron(len(trainX[0]))
+    while True:
+        random.shuffle(D)
+        for x, y in D:
+            classifier.update(x, y)
+        error = 0
+        for x, y in V:
+            error += int (y != classifier.predict(x))
+        print (  'update?', error )
+        print (error / float (len(V)), len(V) )
+
+

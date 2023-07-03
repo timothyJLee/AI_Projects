@@ -1,0 +1,20 @@
+Script started on Fri 01 Aug 2014 12:04:35 AM EDT
+OL/SUMMERII2014/cs5300/Final/BackPropascriptmbackpropscriptocuments/Dropbox/SCHOO
+python3pBackPropTimothyLee.py
+error 0.94250
+error 0.04287
+error 0.00348
+error 0.00164
+error 0.00106
+error 0.00078
+error 0.00079
+error 0.00053
+error 0.00044
+error 0.00038
+[0, 0] -> [0.025608579041218795]
+[0, 1] -> [0.9818457844779477]
+[1, 0] -> [0.9817074256406622]
+[1, 1] -> [-0.02103006443981345]
+RII2014/cs5300/Final/BackPropagation$oexitok-PC:~/Documents/Dropbox/SCHOOL/SUMMER
+
+Script done on Fri 01 Aug 2014 12:04:57 AM EDT
